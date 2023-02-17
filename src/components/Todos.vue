@@ -51,12 +51,7 @@
 
     data() {
       return {
-        todos: [
-          {
-            name: "tache test",
-            completed: false,
-          },
-        ],
+        todos: [],
         newTodo: '',
         filter: 'all',
         editing: null,
