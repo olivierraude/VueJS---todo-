@@ -31,7 +31,7 @@
     </div>
     <footer class="footer" v-show="hasTodos">
       <span class="todo-count">
-        <strong>{{ remaining }}</strong> tâches à faire
+        <strong>{{ remaining }}</strong> tâches à faire test
       </span>
       <ul class="filters">
         <li><a href="#" :class="{selected: filter === 'all'}" @click.prevent="filter = 'all'">Toutes</a></li>
