@@ -5,7 +5,7 @@
       <input
         type="text"
         class="new-todo"
-        placeholder="Ajouter une tache"
+        placeholder="Ajouter une tache Ungit"
         v-model="newTodo"
         @keyup.enter="addTodo"
       />
@@ -31,7 +31,7 @@
     </div>
     <footer class="footer" v-show="hasTodos">
       <span class="todo-count">
-        <strong>{{ remaining }}</strong> tâches à faire test
+        <strong>{{ remaining }}</strong> tâches à faire
       </span>
       <ul class="filters">
         <li><a href="#" :class="{selected: filter === 'all'}" @click.prevent="filter = 'all'">Toutes</a></li>
@@ -45,13 +45,14 @@
 
 <script>
   import { nextTick } from 'vue'
-  const Vue = { nextTick }
 
   export default {
-
+    props: {
+      value: {type: Array, default () { return [] }}
+    },
     data() {
       return {
-        todos: [],
+        todos: this.value, 
         newTodo: '',
         filter: 'all',
         editing: null,
@@ -126,4 +127,5 @@
       }
     }
   };
+
 </script>
